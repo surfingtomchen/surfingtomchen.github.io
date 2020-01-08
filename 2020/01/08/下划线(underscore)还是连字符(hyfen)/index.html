@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>下划线(underscore)还是连字符(hyfen) | Tom&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="最近看了一下自己github的repo命名方式，有用Pascal命名法的，有Camel命名法的，有用下划线(underscore)分割的 (官方名称：snake_case)，也有连字符(hyfen)分割 (官方名称：kebab-case)，非常混乱。这些不同命名法的效果是 1234theCamelCase.gitThePascalCase.gitthe_snake_case.gitthe-keba">
+<meta name="keywords" content="coding">
+<meta property="og:type" content="article">
+<meta property="og:title" content="下划线(underscore)还是连字符(hyfen)">
+<meta property="og:url" content="http://yoursite.com/2020/01/08/下划线(underscore)还是连字符(hyfen)/index.html">
+<meta property="og:site_name" content="Tom&#39;s Blog">
+<meta property="og:description" content="最近看了一下自己github的repo命名方式，有用Pascal命名法的，有Camel命名法的，有用下划线(underscore)分割的 (官方名称：snake_case)，也有连字符(hyfen)分割 (官方名称：kebab-case)，非常混乱。这些不同命名法的效果是 1234theCamelCase.gitThePascalCase.gitthe_snake_case.gitthe-keba">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://hsto.org/getpro/habr/post_images/d34/331/a8d/d34331a8d0a6f47b983a1a9d79845b03.png">
+<meta property="og:image" content="http://yoursite.com/images/Screen%20Shot%202020-01-08%20at%2013.15.25.png">
+<meta property="og:image" content="http://yoursite.com/images/Screen%20Shot%202020-01-08%20at%2013.15.15.png">
+<meta property="og:updated_time" content="2020-01-08T21:56:40.478Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="下划线(underscore)还是连字符(hyfen)">
+<meta name="twitter:description" content="最近看了一下自己github的repo命名方式，有用Pascal命名法的，有Camel命名法的，有用下划线(underscore)分割的 (官方名称：snake_case)，也有连字符(hyfen)分割 (官方名称：kebab-case)，非常混乱。这些不同命名法的效果是 1234theCamelCase.gitThePascalCase.gitthe_snake_case.gitthe-keba">
+<meta name="twitter:image" content="http://hsto.org/getpro/habr/post_images/d34/331/a8d/d34331a8d0a6f47b983a1a9d79845b03.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Tom&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head></html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <div class="outer">
+        <section id="main"><article id="post-下划线(underscore)还是连字符(hyfen)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      下划线(underscore)还是连字符(hyfen)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      <a href="/2020/01/08/下划线(underscore)还是连字符(hyfen)/" class="article-date">
+  <time datetime="2020-01-08T20:03:39.000Z" itemprop="datePublished">2020-01-08</time>
+</a>
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近看了一下自己github的repo命名方式，有用<a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" rel="noopener">Pascal</a>命名法的，有<a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" rel="noopener">Camel</a>命名法的，有用下划线(underscore)分割的 (官方名称：<a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener">snake_case</a>)，也有连字符(hyfen)分割 (官方名称：<a href="https://wiki.c2.com/?KebabCase" target="_blank" rel="noopener">kebab-case</a>)，非常混乱。这些不同命名法的效果是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">theCamelCase.git</span><br><span class="line">ThePascalCase.git</span><br><span class="line">the_snake_case.git</span><br><span class="line">the-kebab-case.git</span><br></pre></td></tr></table></figure>
+<p>于是想研究研究官方建议的命名方式，但是发现官方好像没有推荐的命名方式。</p>
+<p>遂google之，果然有篇文章提到了这件事情，见<a href="https://gravitydept.com/blog/devising-a-git-repository-naming-convention" target="_blank" rel="noopener">原文链接</a> , 作者<a href="https://gravitydept.com/about" target="_blank" rel="noopener">Brendan Falkowski</a>跟我有一样的困惑，还因此发推询问，底下有个叫Bryan Veloso的Github员工回答说 ”没有特殊风格，和具体语言的习惯用法有关。“</p>
+<p>但是Brendan继续研究了一下github内部的仓库，发现基本上都是kebab风格</p>
+<p><img src="http://hsto.org/getpro/habr/post_images/d34/331/a8d/d34331a8d0a6f47b983a1a9d79845b03.png" alt></p>
+<p>所以他建议也是采用这种风格。</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">the-fellowship-of-the-ring.git</span><br><span class="line">the-two-towers.git</span><br><span class="line">the-return-of-the-king.git</span><br></pre></td></tr></table></figure>
+<p>全部小写是有好处的</p>
+<ol>
+<li><p>书写方便，小写字母直接敲键盘即可，大写字母需要按住Shift</p>
+</li>
+<li><p>因为github项目名称出现在url中间，各种语言对于url的处理最兼容方式还是小写</p>
+</li>
+</ol>
+<p>但是单词中间的分隔符是用underscore还是hypen，我是有不同的看法。两者都可以让单词分割开从而阅读性更强。</p>
+<p>hypen好处：</p>
+<ol>
+<li><p>键盘上直接输入，不用按多余的按键。”-“只需按一次键盘，“_”需要按住shift，所以需要按2次键盘</p>
+</li>
+<li><p>符合英语连词语法习惯</p>
+</li>
+</ol>
+<p>但是有个严重缺点：</p>
+<p>双击单个单词的时候，在很多环境下，比如某些IDE，某些浏览器，某些终端，大部分情况下，被hypen分割，无法全选，必须手动全选。</p>
+<p>比如，以SublimeText for Mac为例，双击单词second的效果</p>
+<p><img src="/images/Screen Shot 2020-01-08 at 13.15.25.png" alt="双击选中单个词"></p>
+<p>而underscore不会，双击单词second之后，自动全部选中</p>
+<p><img src="/images/Screen Shot 2020-01-08 at 13.15.15.png" alt="双击全部选中"></p>
+<p>毕竟这是整个名称，所以全选的概率远远大于单个单词选中的概率。这个对于效率的影响就远大于键盘上输入省去的时间。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>我选underscore。</p>
+<h3 id="Redis的key名"><a href="#Redis的key名" class="headerlink" title="Redis的key名"></a>Redis的key名</h3><p>同样的命名方式也适用于Redis里面的key，以前我们的项目中偏爱用冒号(colon)分割，比如</p>
+<p><code>user:name:blabla</code></p>
+<p>在IDE环境下，同样不能双击某个单词获得整体选中的效果，这样给复制key然后到terminal上输入命令带来低效。</p>
+<p>如果换成underscore，也就没有这个问题了。</p>
+
+      
+
+      
+        
+    </div>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/08/删库事件6周年/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">删库事件6周年</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        <aside id="sidebar">
+  <nav class="menus">
+  	<ul>
+  		<li><a href="/"><i class="icon icon-home"></i></a></li>
+  		
+			<li><a href="/archives"><i class="icon icon-fenlei"></i></a></li>
+  		
+  		
+			<li><a href="/tags"><i class="icon icon-tag"></i></a></li>
+  		
+  		
+  			<li><a href="https://github.com/surfingtomchen" target="_blank"><i class="icon icon-github"></i></a></li>
+  		
+  	</ul>
+  </nav>
+  <a id="go-top" href="#"><i class="icon icon-up"></i></a>
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+	<div id="footer-info" class="inner">
+	  &copy; 2020 Tom CHEN 
+	  - Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	  - Theme <a href="https://github.com/hejianxian/hexo-theme-jane/" target="_blank">Jane</a>
+	</div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tag</a>
+  
+    <a href="https://github.com/surfingtomchen" class="mobile-nav-link">Github</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
