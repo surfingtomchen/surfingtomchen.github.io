@@ -86,6 +86,23 @@
 </article>
 
 
+<section id="comments">
+	<div id='gitmentContainer' style="margin-bottom: -19px;"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src='https://imsun.github.io/gitment/dist/gitment.browser.js'></script>
+  <script>
+    var gitment = new Gitment({
+      owner: 'surfingtomchen',
+      repo: 'surfingtomchen.github.io',
+      oauth: {
+        client_id: '601d278782d8d7721fd8',
+        client_secret: 'dc6d77055fbabd2ad6954a699c9c8ab7b34bbbec',
+      },
+    })
+    gitment.render('gitmentContainer')
+  </script>
+</section>
+
 </section>
         <aside id="sidebar">
   <nav class="menus">
