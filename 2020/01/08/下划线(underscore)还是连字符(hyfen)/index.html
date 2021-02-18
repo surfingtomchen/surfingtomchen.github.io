@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Tom CHEN"><title>下划线(underscore)还是连字符(hyfen) · Tom's Blog</title><meta name="description" content="最近看了一下自己github的repo命名方式，有用Pascal命名法的，有Camel命名法的，有用下划线“_”分割的 (官方名称：snake_case)，也有连字符“-”分割 (官方名称：kebab-case)，非常混乱。这些不同命名法的效果是
+theCamelCase.git
+ThePascal"><meta name="keywords" content><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Tom CHEN</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">追忆似水年华</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">Home</a></li><li><a href="/archives">Archive</a></li><li><a href="/tags">Tags</a></li><li><a href="/tags/index.html">tags</a></li><li class="soc"><a href="https://github.com/surfingtomchen" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/jfchentom" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter">&nbsp;</i></a><a href="https://surfingtomchen.github.io/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2021&nbsp;<a target="_blank" href="https://surfingtomchen.github.io" rel="noopener noreferrer">Tom CHEN</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>下划线(underscore)还是连字符(hyfen)</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-01-08</span></p><p class="post-abstract"></p><p>最近看了一下自己github的repo命名方式，有用<a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" rel="noopener">Pascal</a>命名法的，有<a href="https://en.wikipedia.org/wiki/Camel_case" target="_blank" rel="noopener">Camel</a>命名法的，有用下划线“_”分割的 (官方名称：<a href="https://en.wikipedia.org/wiki/Snake_case" target="_blank" rel="noopener">snake_case</a>)，也有连字符“-”分割 (官方名称：<a href="https://wiki.c2.com/?KebabCase" target="_blank" rel="noopener">kebab-case</a>)，非常混乱。这些不同命名法的效果是</p>
+<pre><code>theCamelCase.git
+ThePascalCase.git
+the_snake_case.git
+the-kebab-case.git
+</code></pre><p>于是想研究研究官方建议的命名方式，但是发现官方好像没有推荐的命名方式。</p>
+<p>遂google之，果然有篇文章提到了这件事情，见<a href="https://gravitydept.com/blog/devising-a-git-repository-naming-convention" target="_blank" rel="noopener">原文链接</a> , 作者<a href="https://gravitydept.com/about" target="_blank" rel="noopener">Brendan Falkowski</a>跟我有一样的困惑，还因此发推询问，底下有个叫Bryan Veloso的Github员工回答说 ”没有特殊风格，和具体语言的习惯用法有关。“</p>
+<p>但是Brendan继续研究了一下github内部的仓库，发现基本上都是kebab风格</p>
+<p><img src="http://hsto.org/getpro/habr/post_images/d34/331/a8d/d34331a8d0a6f47b983a1a9d79845b03.png" alt></p>
+<p>所以他建议也是采用这种风格。</p>
+<p>比如：</p>
+<pre><code>the-fellowship-of-the-ring.git
+the-two-towers.git
+the-return-of-the-king.git
+</code></pre><p>全部小写是有好处的</p>
+<ol>
+<li><p>书写方便，小写字母直接敲键盘即可，大写字母需要按住Shift</p>
+</li>
+<li><p>因为github项目名称出现在url中间，各种语言对于url的处理最兼容方式还是小写</p>
+</li>
+</ol>
+<p>但是单词中间的分隔符是用underscore还是hyfen，我是有不同的看法。两者都可以让单词分割开从而阅读性更强。</p>
+<p>hyfen好处：</p>
+<ol>
+<li><p>键盘上直接输入，不用按多余的按键。“-”只需按一次键盘，“_”需要按住shift，所以需要按2次键盘</p>
+</li>
+<li><p>符合英语连词语法习惯</p>
+</li>
+</ol>
+<p>但是有个严重缺点：</p>
+<p>双击单个单词的时候，在很多环境下，比如某些IDE，某些浏览器，某些终端，大部分情况下，被hyfen分割，无法全选，必须手动全选。</p>
+<p>比如，以SublimeText for Mac为例，双击单词second的效果</p>
+<p><img src="/images/Screen Shot 2020-01-08 at 13.15.25.png" alt="双击选中单个词"></p>
+<p>而underscore不会，双击单词second之后，自动全部选中</p>
+<p><img src="/images/Screen Shot 2020-01-08 at 13.15.15.png" alt="双击全部选中"></p>
+<p>毕竟这是整个名称，所以全选的概率远远大于单个单词选中的概率。这个对于效率的影响就远大于键盘上输入省去的时间。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>我选underscore。</p>
+<h3 id="Redis的key名"><a href="#Redis的key名" class="headerlink" title="Redis的key名"></a>Redis的key名</h3><p>同样的命名方式也适用于Redis里面的key，以前我们的项目中偏爱用冒号(colon)分割，比如</p>
+<p><code>user:name:blabla</code></p>
+<p>在IDE环境下，同样不能双击某个单词获得整体选中的效果，这样给复制key然后到terminal上输入命令带来低效。</p>
+<p>如果换成underscore，也就没有这个问题了。</p>
+<p></p></div><div class="share"><span>Share</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=https://surfingtomchen.github.io/2020/01/08/下划线(underscore)还是连字符(hyfen)/%20Tom's Blog%20下划线(underscore)还是连字符(hyfen)" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2020/05/08/视频vs文字/" title="视频 vs 文字"><i class="fa fa-angle-double-left"></i>&nbsp;Previous post: 视频 vs 文字</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2020/01/08/删库事件6周年/" title="删库事件6周年">Next post: 删库事件6周年&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2021&nbsp;<a target="_blank" href="https://surfingtomchen.github.io" rel="noopener noreferrer">Tom CHEN</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
