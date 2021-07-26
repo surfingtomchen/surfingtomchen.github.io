@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Tom CHEN"><title>一个十位数 · Tom's Blog</title><meta name="description" content="题目请将0123456789十个数字以特定的顺序排列，组成一个10位数abcdefghij（每个数字只能使用一次），使得：1.第一位数字组成的整数可以被1整除2.第一、二位数字组成的整数可以被2整除3.第一、二、三位数字组成的整数可以被3整除4.第一、二、三、四位数字组成的整数可以被4整除……10."><meta name="keywords" content><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/bootstrap.min.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="stylesheet" href="/css/style.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><div id="stage" class="container"><div class="row"><div id="side-bar" class="col-sm-3 col-xs-12 side-container invisible"><div class="vertical-text site-title"><h3 tabindex="-1" class="site-title-small"><a href="/" class="a-title">Tom CHEN</a></h3><h1 tabindex="-1" class="site-title-large"><a href="/" class="a-title">正在刷新</a></h1><!--h6(onclick="triggerSiteNav()") Trigger--></div><br class="visible-lg visible-md visible-sm"><div id="site-nav" class="site-title-links"><ul><li><a href="/">대문</a></li><li><a href="/archives">아카이브</a></li><li><a href="/tags">태그</a></li><li><a href="/tags/index.html">tags</a></li><li class="soc"><a href="https://github.com/surfingtomchen" target="_blank" rel="noopener noreferrer"><i class="fa fa-github">&nbsp;</i></a><a href="https://twitter.com/jfchentom" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter">&nbsp;</i></a><a href="https://surfingtomchen.github.io/atom.xml" target="_blank" rel="noopener noreferrer"><i class="fa fa-rss">&nbsp;</i></a></li></ul><div class="visible-lg visible-md visible-sm site-nav-footer"><br class="site-nav-footer-br"><footer><p>&copy;&nbsp;2021&nbsp;<a target="_blank" href="https://surfingtomchen.github.io" rel="noopener noreferrer">Tom CHEN</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div><div id="main-container" class="col-sm-9 col-xs-12 main-container invisible"><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post-container"><p class="post-title"><a>一个十位数</a></p><p class="post-meta"><span class="date meta-item">Posted at&nbsp;2020-11-24</span></p><p class="post-abstract"></p><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>请将0123456789十个数字以特定的顺序排列，组成一个10位数abcdefghij（每个数字只能使用一次），使得：<br>1.第一位数字组成的整数可以被1整除<br>2.第一、二位数字组成的整数可以被2整除<br>3.第一、二、三位数字组成的整数可以被3整除<br>4.第一、二、三、四位数字组成的整数可以被4整除<br>……<br>10.第一、二、三…十位数字组成的整数可以被10整除</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><ol>
+<li><p>奇偶必须间隔</p>
+</li>
+<li><p>被3，6整除的特点是每位相加是3的倍数，被9整除是每位相加是9的倍数，所以倒数第二个条件等于没有，1~9任何组合都可以是9的倍数</p>
+</li>
+<li><p>被4，8整除的特点是最后2位数是4的倍数，最后3位数是8的倍数。</p>
+</li>
+<li><p>5的倍数结尾是5或0，因为最后一位j是0，所以e只能是5</p>
+</li>
+<li><p>由1）3）推出d=2或6</p>
+</li>
+<li><p>由1）2）3）可以推出 def相加也是3的倍数，所以def = 654 或 258</p>
+</li>
+<li><p>根据被8整除的特点，如果f=4，则根据5）推出 fgh 可能是</p>
+<ul>
+<li>432，则b=8</li>
+<li>472，则b=8</li>
+</ul>
+<p>如果f=8，则fgh可能是</p>
+<ul>
+<li>816，则b=4</li>
+<li>896，则b=4</li>
+</ul>
+</li>
+<li><p>截止到目前所有条件，bcdefgh 可能为：</p>
+<ul>
+<li>8165432</li>
+<li>8165472</li>
+<li>8365472</li>
+<li>8765432</li>
+<li>8965432</li>
+<li>8965472</li>
+<li>4125896</li>
+<li>4725896</li>
+</ul>
+</li>
+<li><p>再根据前三位相加是3的倍数，abcdefgh可能为：</p>
+<ul>
+<li>38165472</li>
+<li><p>98165432</p>
+</li>
+<li><p>98165472</p>
+</li>
+<li><p>18365472</p>
+</li>
+<li><p>98765432</p>
+</li>
+<li><p>18965432</p>
+</li>
+<li>18965472</li>
+<li>78965432</li>
+<li>74125896</li>
+<li>14725896</li>
+</ul>
+</li>
+<li><p>根据7的倍数排除后，上面10个数字只有38165472满足要求，最后答案是：3816547290</p>
+</li>
+</ol>
+<h2 id="编程解法"><a href="#编程解法" class="headerlink" title="编程解法"></a>编程解法</h2><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span> <span class="token function">solve</span><span class="token punctuation">(</span> <span class="token keyword">int</span> length<span class="token punctuation">,</span> <span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> numExists<span class="token punctuation">,</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> value <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span> index <span class="token operator">></span> length <span class="token punctuation">)</span> <span class="token keyword">return</span> value<span class="token punctuation">;</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span> <span class="token keyword">unsigned</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> length<span class="token punctuation">;</span> <span class="token operator">++</span>i <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span> numExists <span class="token operator">&amp;</span> <span class="token punctuation">(</span> <span class="token number">0x01u</span> <span class="token operator">&lt;&lt;</span> i <span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span> value <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> i <span class="token punctuation">)</span> <span class="token operator">%</span> index <span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
+        <span class="token keyword">unsigned</span> <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token function">solve</span><span class="token punctuation">(</span> length<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> numExists <span class="token operator">|</span> <span class="token number">0x01u</span> <span class="token operator">&lt;&lt;</span> i<span class="token punctuation">,</span> value <span class="token operator">*</span> <span class="token number">10</span> <span class="token operator">+</span> i <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span> result <span class="token operator">></span> <span class="token number">0</span> <span class="token punctuation">)</span> <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">int</span>          resultLength <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> result       <span class="token operator">=</span> <span class="token function">solve</span><span class="token punctuation">(</span> resultLength<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span> <span class="token string">"%d0\n"</span><span class="token punctuation">,</span> result <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p></p></div><div class="share"><span>공유하기</span>&nbsp;<span class="soc"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></span><span class="soc"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></span><span class="soc"><a href="http://twitter.com/home?status=https://surfingtomchen.github.io/2020/11/24/一个十位数/%20Tom's Blog%20一个十位数" class="fa fa-twitter"></a></span></div><div class="pagination"><p class="clearfix"><span class="pre pagbuttons"><a role="navigation" href="/2021/02/05/为什么在朋友圈分享打卡的朋友都没有坚持下去/" title="为什么在朋友圈分享打卡的朋友都没有坚持下去"><i class="fa fa-angle-double-left"></i>&nbsp;이전 포스트: 为什么在朋友圈分享打卡的朋友都没有坚持下去</a></span><span>&nbsp;</span><span class="next pagbuttons"><a role="navigation" href="/2020/05/16/本科面试经历/" title="本科面试经历">다음 포스트: 本科面试经历&nbsp;<i class="fa fa-angle-double-right"></i></a></span></p></div></div></div></div><div class="visible-xs site-bottom-footer"><footer><p>&copy;&nbsp;2021&nbsp;<a target="_blank" href="https://surfingtomchen.github.io" rel="noopener noreferrer">Tom CHEN</a></p><p>Theme&nbsp;<a target="_blank" href="https://github.com/SumiMakito/hexo-theme-typography" rel="noopener noreferrer">Typography</a>&nbsp;by&nbsp;<a target="_blank" href="https://www.keep.moe" rel="noopener noreferrer">Makito</a></p><p>Proudly published with&nbsp;<a target="_blank" href="https://hexo.io" rel="noopener noreferrer">Hexo</a></p></footer></div></div></div></div><script src="/js/jquery-3.1.0.min.js"></script><script src="/js/bootstrap.min.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script><script src="/js/google-analytics.js"></script><script src="/js/typography.js"></script></body></html>
